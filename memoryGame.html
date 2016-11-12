@@ -8,35 +8,44 @@
     <script src="memorygame.js"></script>
   </head>
   <body>
-    <!-- <div class="container" ng-app='my-app' ng-controller="MemoryController">
+    <div class="container" ng-app='my-app' ng-controller="MemoryController">
       <div id="message-div">
-        <h2 ng-model="message" id="message">Moves: {{moves}} matches: {{matches}}</h2>
+        <h2 ng-model="message" id="message">Moves: {{deck.moves}} matches: {{deck.matches}}</h2>
+        <h2 id="winBanner" ng-show="deck.won">You won in {{deck.moves}} moves!</h2>
+        <!-- <h2 id="winBanner" ng-show="deck.matches === (deck.currentCards / 2)">You won in {{deck.moves}}!</h2> -->
       </div>
+        <div class="levels">
+          <p>
+            New Game
+          </p>
+          <button type="button" ng-click="deck.generateCards(8)" name="button">Easy</button>
+          <button type="button" ng-click="deck.generateCards(12)" name="button">Normal</button>
+          <button type="button" ng-click="deck.generateCards(16)" name="button">Pro</button>
+        </div>
       <div class="cards clear">
         <div ng-repeat="card in deck.currentCards" ng-click="revealCard(card)">
           <img class="flipped" ng-hide="card.open"  src="assets/logo.png"  alt=""  />
           <img class="flipped" ng-show="card.open" src="{{card.url}}" alt=""  />
         </div>
       </div>
-    </div> -->
+    </div>
 
   </body>
 </html>
 
-<div class="flip-container" ng-app='my-app' ng-controller="MemoryController" ontouchstart="this.classList.toggle('hover');">
-	<div class="flipper" ng-repeat="card in deck.currentCards" ng-click="revealCard(card)">
+<!-- <div ng-app='my-app' ng-controller="MemoryController">
+	<div  ng-repeat="card in deck.currentCards" ng-click="revealCard(card)">
 		<div class="front" class="cards">
       <div class="cards clear">
         <div ng-repeat="card in deck.currentCards" ng-click="revealCard(card)">
-          <img class="flipped" ng-hide="card.open"  src="assets/logo.png"  alt=""  />
-          <img class="flipped" ng-show="card.open" src="{{card.url}}" alt=""  />
+          <img ng-hide="card.open"  src="assets/logo.png"  alt=""  />
+          <img ng-show="card.open" src="{{card.url}}" alt=""  />
         </div>
       </div>
 		</div>
-		<div class="back" class="cards"> -->
-			<!-- back content
-      <img ng-show="card.open" src="{{card.url}}" alt=""  />
-		</div>
-	</div>
-</div>
-ng-class="{backImg: card.open}
+		<! <div class="back" class="cards"> -->
+      <!-- <img ng-show="card.open" src="{{card.url}}" alt=""  /> -->
+	<!-- </div>
+</div> -->
+
+<!-- ng-class="{backImg: card.open} -->

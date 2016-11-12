@@ -5,8 +5,9 @@ app.controller('MemoryController', function($scope, $timeout) {
   $scope.secondCard = null;
   $scope.firstState = true;
   $scope.gameInPlay = true;
-  $scope.moves = 0;
-  $scope.matches = 0;
+  $scope.deck.moves = 0;
+  $scope.deck.matches = 0;
+  $scope.deck.won = false;
 
   $scope.revealCard = function(card) {
     if ((card.matched === false) && ($scope.gameInPlay === true)) {
@@ -17,13 +18,18 @@ app.controller('MemoryController', function($scope, $timeout) {
       } else if ($scope.firstCard['$$hashKey'] !== card['$$hashKey']) {
         card.open = true;
         $scope.secondCard = card;
-        $scope.moves += 1;
+        $scope.deck.moves += 1;
         if ($scope.firstCard.url === $scope.secondCard.url) {
             $scope.firstCard.open = true;
             $scope.secondCard.open = true;
             $scope.firstCard.matched = true;
             $scope.secondCard.matched = true;
-            $scope.matches += 1;
+            $scope.deck.matches += 1;
+            if ($scope.deck.matches === ($scope.deck.currentCards.length / 2)) {
+              $scope.deck.won = true;
+              console.log($scope.deck.matches);
+              console.log($scope.deck.currentCards.length);
+            }
         } else {
           $timeout(function() {
             $scope.gameInPlay = true;
@@ -52,13 +58,20 @@ function Card(url, open, matched) {
 function Deck() {
   this.currentCards = [];
   this.generateCards();
+  this.moves = 0;
+  this.matches = 0;
+  this.won = false;
 }
 
-Deck.prototype.generateCards = function() {
+Deck.prototype.generateCards = function(numCards) {
   var cards = [];
+  this.currentCards = [];
+  this.moves = 0;
+  this.matches = 0;
+  this.won = false;
 
   for(var j = 0; j < 2; j++) {
-    for (var i = 1; i <= 8; i++) {
+    for (var i = 1; i <= (numCards / 2); i++) {
       var url = "assets/monsters-0" + i + ".png"
       cards.push(new Card(url, false, false));
     };

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="style.css" media="screen" title="no title">
+    <script src="angular.js">  </script>
+    <script src="memorygame.js"></script>
+  </head>
+  <body>
+    <div class="" ng-app='my-app' ng-controller="MemoryController">
+      <div id="message-div">
+        <h2 ng-model="message" id="message">Moves: {{moves}} matches: {{matches}}</h2>
+      </div>
+      <div class="cards">
+        <div  ng-repeat="card in deck.currentCards" ng-click="revealCard(card)">
+          <img ng-hide="card.open"  src="assets/logo.png"  alt=""  />
+          <img ng-show="card.open" src="{{card.url}}" alt=""  />
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- ng-class="{backImg: card.open} -->

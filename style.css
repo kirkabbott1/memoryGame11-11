@@ -1,0 +1,13 @@
+.cards img{
+  width: 25%;
+  float: left;
+}
+
+.backImg {
+  background-image: url("assets/logo.png");
+}
+
+#message-div {
+  height: 60px;
+  text-align: center;
+}

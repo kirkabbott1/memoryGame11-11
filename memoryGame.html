@@ -8,17 +8,35 @@
     <script src="memorygame.js"></script>
   </head>
   <body>
-    <div class="" ng-app='my-app' ng-controller="MemoryController">
+    <!-- <div class="container" ng-app='my-app' ng-controller="MemoryController">
       <div id="message-div">
         <h2 ng-model="message" id="message">Moves: {{moves}} matches: {{matches}}</h2>
       </div>
-      <div class="cards">
-        <div  ng-repeat="card in deck.currentCards" ng-click="revealCard(card)">
-          <img ng-hide="card.open"  src="assets/logo.png"  alt=""  />
-          <img ng-show="card.open" src="{{card.url}}" alt=""  />
+      <div class="cards clear">
+        <div ng-repeat="card in deck.currentCards" ng-click="revealCard(card)">
+          <img class="flipped" ng-hide="card.open"  src="assets/logo.png"  alt=""  />
+          <img class="flipped" ng-show="card.open" src="{{card.url}}" alt=""  />
+        </div>
       </div>
-    </div>
+    </div> -->
+
   </body>
 </html>
 
-<!-- ng-class="{backImg: card.open} -->
+<div class="flip-container" ng-app='my-app' ng-controller="MemoryController" ontouchstart="this.classList.toggle('hover');">
+	<div class="flipper" ng-repeat="card in deck.currentCards" ng-click="revealCard(card)">
+		<div class="front" class="cards">
+      <div class="cards clear">
+        <div ng-repeat="card in deck.currentCards" ng-click="revealCard(card)">
+          <img class="flipped" ng-hide="card.open"  src="assets/logo.png"  alt=""  />
+          <img class="flipped" ng-show="card.open" src="{{card.url}}" alt=""  />
+        </div>
+      </div>
+		</div>
+		<div class="back" class="cards"> -->
+			<!-- back content
+      <img ng-show="card.open" src="{{card.url}}" alt=""  />
+		</div>
+	</div>
+</div>
+ng-class="{backImg: card.open}

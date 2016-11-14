@@ -1,5 +1,5 @@
 /*******************
-      TEMP STYLING
+      Card flip styling
 *******************/
 .card {
   perspective: 2000px;
@@ -50,7 +50,8 @@
 .card.open .front {
   transform: rotateY(0deg);
 }
-
+/*************************
+END CARD FLIP STYLING
 /*************************/
 
 .container {

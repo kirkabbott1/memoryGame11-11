@@ -2,7 +2,7 @@
       Card flip styling
 *******************/
 .card {
-  perspective: 2000px;
+  perspective: 500px;
   position: relative;
   width: 25%;
   height: 200px;

@@ -1,3 +1,23 @@
+body {
+  height: 100%;
+  width: 100%;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+.title {
+  text-align: center;
+  border-radius: 10px;
+
+}
 /*******************
       Card flip styling
 *******************/
@@ -8,7 +28,10 @@
   height: 200px;
   float: left;
 }
-
+.logo {
+  height: 100%;
+  width: 100%;
+}
 .card .front, .card .back {
   width: 100%;
   height: 200px;
@@ -19,8 +42,12 @@
 }
 
 .card .front .monster {
-  height: 100%;
-  width: 100%;
+  height: 55%;
+  width: 55%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .card .back .logo {
@@ -57,6 +84,7 @@ END CARD FLIP STYLING
 .container {
   margin: auto;
   max-width: 700px;
+  z-index: 999;
 }
 
 .clear:before, .clear:after {
@@ -71,4 +99,41 @@ END CARD FLIP STYLING
 #message-div {
   height: 60px;
   text-align: center;
+}
+.levels {
+  margin-top: 18%;
+  text-align: center;
+}
+button {
+  /*width: 75px;*/
+  font-size: 1em;
+  background: #ff0022;
+  background-image: -webkit-linear-gradient(top, #ff0022, #00e00f);
+  background-image: -moz-linear-gradient(top, #ff0022, #00e00f);
+  background-image: -ms-linear-gradient(top, #ff0022, #00e00f);
+  background-image: -o-linear-gradient(top, #ff0022, #00e00f);
+  background-image: linear-gradient(to bottom, #ff0022, #00e00f);
+  -webkit-border-radius: 13;
+  -moz-border-radius: 13;
+  border-radius: 13px;
+  font-family: 'Press Start 2P', cursive;
+  color: #ffffff;
+  font-size: 15px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+button:hover {
+  background: #05e614;
+  background-image: -webkit-linear-gradient(top, #05e614, #f01616);
+  background-image: -moz-linear-gradient(top, #05e614, #f01616);
+  background-image: -ms-linear-gradient(top, #05e614, #f01616);
+  background-image: -o-linear-gradient(top, #05e614, #f01616);
+  background-image: linear-gradient(to bottom, #05e614, #f01616);
+  text-decoration: none;
+}
+
+#winBanner {
+  background-color: #333;
+  border radius: 12px;
 }

@@ -2,18 +2,26 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Memory Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Memory Kards</title>
     <link rel="stylesheet" href="style.css" media="screen" title="no title">
     <script src="angular.js">  </script>
     <script src="memorygame.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
   </head>
   <body>
+      <img id="bg" src="assets/logo2.jpg" alt="" />
 
     <div class="container" ng-app='my-app' ng-controller="MemoryController">
-
+      <div class="title">
+        <h1>Memory Kards</h1>
+      </div>
       <div id="message-div">
-        <h2 ng-model="message" id="message">Moves: {{deck.moves}} matches: {{deck.matches}}</h2>
-        <h2 id="winBanner" ng-show="deck.won">You won in {{deck.moves}} moves!</h2>
+        <h2 ng-model="message" id="message">Moves: {{deck.moves}}</h2>
+        <div id="winBanner">
+          <h2 ng-show="deck.won">You won in {{deck.moves}} moves!</h2>
+        </div>
       </div>
 
       <div class="levels">
@@ -21,8 +29,8 @@
           New Game
         </p>
         <button type="button" ng-click="deck.generateCards(8)" name="button">Easy</button>
-        <button type="button" ng-click="deck.generateCards(16)" name="button">Normal</button>
-        <button type="button" ng-click="deck.generateCards(24)" name="button">Pro</button>
+        <button type="button" ng-click="deck.generateCards(16)" name="button">Medium</button>
+        <button type="button" ng-click="deck.generateCards(24)" name="button">Hard</button>
       </div>
 
       <div class="cards clear">
@@ -31,7 +39,7 @@
             <img class="monster" src="{{card.url}}" alt=""  />
           </div>
           <div class="back">
-            <img class="logo" src="assets/logo.png"  alt=""  />
+            <img class="logo" src="assets/logo7.png"  alt=""  />
           </div>
         </div>
       </div>

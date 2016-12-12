@@ -1,6 +1,5 @@
 body {
   height: 100%;
-  width: 100%;
   color: white;
   font-family: 'Press Start 2P', cursive;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
@@ -101,7 +100,7 @@ END CARD FLIP STYLING
   text-align: center;
 }
 .levels {
-  margin-top: 18%;
+  margin-top: 70px;
   text-align: center;
 }
 button {

@@ -1,13 +1,13 @@
 # Memory Game
  ---
- ### Objective:
+### Objective:
 create a visually stimulating memory game (based on MarioKart 8) in angularJS with three difficulty settings.
 
 
- ### Live Demo:
+### Live Demo:
 [Memory Kards](http://kirkabbott.com/memorygame/ "MemoryKards")
 
- ### Authors:
+### Authors:
 
  Kirk Abbott
 ### Screenshots
